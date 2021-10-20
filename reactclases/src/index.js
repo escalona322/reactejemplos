@@ -4,12 +4,12 @@ import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import Contador from './components/Contador/Contador'
+import DibujosComplejos from './components/DibujosComplejos/DibujosComplejos';
+import DibujosComplejos2 from './components/DibujosComplejos/DibujosComplejos2';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Contador inicio="11" />
-    <Contador inicio="0" />
-    <Contador inicio="2" />
+    <DibujosComplejos2/>
   </React.StrictMode>,
   document.getElementById('root')
 );
