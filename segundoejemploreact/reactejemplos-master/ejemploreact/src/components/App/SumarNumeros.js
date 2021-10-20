@@ -1,4 +1,4 @@
-import pepe from "../../assets/images/pepe.jpg"
+import pepe from "../../assets/pepe.jpg"
 function SumarNumeros(){
 
     const sumar = (num1, num2) => {
