@@ -6,10 +6,23 @@ import reportWebVitals from './reportWebVitals';
 import Contador from './components/Contador/Contador'
 import DibujosComplejos from './components/DibujosComplejos/DibujosComplejos';
 import DibujosComplejos2 from './components/DibujosComplejos/DibujosComplejos2';
+import HijoDeporte from './components/Deportes/HijoDeporte';
+import Deportes from './components/Deportes/Deportes';
+import NumerosPadre from './components/Numeros/NumerosPadre';
+import Comics from './components/Comics/Comics';
+import Cine from './components/Rutas/Cine';
+import Home from './components/Rutas/Home';
+import Musica from './components/Rutas/Musica';
+import Television from './components/Rutas/Television';
+import Router from './components/Router'
+import MenuRutas from './components/Rutas/MenuRutas';
 
 ReactDOM.render(
   <React.StrictMode>
-    <DibujosComplejos2/>
+    <div className="App">
+      <MenuRutas/>    
+      <Router/>
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );

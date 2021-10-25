@@ -20,7 +20,7 @@ class DibujosComplejos2 extends Component {
             }}>Añadir al array</button>
            {
                this.state.nombres.map((name, index) =>{
-                    return <h2>{index} {name}</h2>;
+                    return <h2 key={index}>{index} {name}</h2>;
                })
            }
     
