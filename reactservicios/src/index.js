@@ -8,14 +8,13 @@ import MenuRutas from './components/Router/MenuRutas';
 import Router from './components/Router';
 import BuscadorCustomers from './components/ServicioCustomers.js/BuscadorCustomers';
 import BuscadorCoches from './components/ServicioCoches/BuscadorCoches';
-import MaestroDetalleDepartamento from './components/MaestroDetalleDepartamento/MaestroDetalleDepartamento';
+
+import MaestroDetalleDeptPaco from './components/MaestroDetalleDepartamento/MaestroDetalleDepartamentoPaco';
+import EmpleadosRouter from './components/RutasEmpleadosParametros/EmpleadosRouter';
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="App">
-      <MaestroDetalleDepartamento/>
-    
-    </div>      
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
