@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react'
+import { Redirect } from 'react-router';
 import Global from '../../Global';
 
 export default class UpdateDoctor extends Component {
@@ -15,15 +16,19 @@ export default class UpdateDoctor extends Component {
         status: false
     }
     updateDoctor = (e) => {
+        e.preventDefault();
+    
         var doctor = {
-            idDoctor: this.props.iddoc,
-            idHospital: this.props.idhosp,
-            apellido: this.props.apell,
-            especialidad: this.props.espec,
-            salario: this.props.salario
+            idDoctor: parseInt(this.cajaiddocRef.current.value),
+            idHospital: parseInt(this.cajaidhospRef.current.value),
+            apellido: this.cajaapelldocRef.current.value,
+            especialidad: this.cajaespecdocRef.current.value,
+            salario: parseInt(this.cajasalariodocRef.current.value)
         }
         var request = "/api/Doctores";
         var url = Global.urldoctores+request;
+        console.log(url);
+        console.log(doctor)
         axios.put(url, doctor).then(res => {
             this.setState({
                 status: true,
@@ -32,6 +37,9 @@ export default class UpdateDoctor extends Component {
     }
 
     render() {
+        if(this.state.status==true){
+            return <Redirect to="/doctores"/>
+        }
         return (
             <div>
                 <h1>Update Doctor</h1>
