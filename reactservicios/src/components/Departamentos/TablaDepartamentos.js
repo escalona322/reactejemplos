@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Global from '../../Global';
+import { NavLink } from 'react-router-dom';
 
 export default class TablaDepartamentos extends Component {
 
@@ -35,6 +36,7 @@ export default class TablaDepartamentos extends Component {
                             <th>Numero</th>
                             <th>Nombre</th>
                             <th>Localidad</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,6 +45,22 @@ export default class TablaDepartamentos extends Component {
                                 <td>{dept.numero}</td>
                                 <td>{dept.nombre}</td>
                                 <td>{dept.localidad}</td>
+                                <td>
+                                    <NavLink to={"/detallesdepartamento/"+dept.numero+
+                                    "/"+dept.nombre+"/"+dept.localidad}
+                                    className="btn btn-info">
+                                        Detalles
+                                     </NavLink>   
+                                     <NavLink to={"/updatedepartamento/"+dept.numero}
+                                     className="btn btn-info">
+                                         Modificar
+                                     </NavLink>
+                                     <NavLink to={"/deletedepartamento/"+dept.numero+
+                                    "/"+dept.nombre+"/"+dept.localidad}
+                                    className="btn btn-danger">
+                                        Eliminar
+                                    </NavLink>
+                                </td>
                             </tr>)
                         })}
                     </tbody>

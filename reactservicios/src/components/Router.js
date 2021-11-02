@@ -8,6 +8,9 @@ import MaestroDetalleDeptPaco from './MaestroDetalleDepartamento/MaestroDetalleD
 import InsertarDepartamento from './Departamentos/InsertarDepartamento';
 import TablaDepartamentos from './Departamentos/TablaDepartamentos';
 import MenuDepartamentos from './Departamentos/MenuDepartamentos';
+import DetallesDepartamento from './Departamentos/DetallesDepartamento';
+import UpdateDepartamentos from './Departamentos/UpdateDepartamentos';
+import EliminarDepartamento from './Departamentos/EliminarDepartamento';
 
 export default class Router extends Component {
     render() {
@@ -19,6 +22,33 @@ export default class Router extends Component {
                 <Switch>
                     <Route exact path="/departamentos" component={TablaDepartamentos}/>
                     <Route exact path="/creardepartamento" component={InsertarDepartamento}/>
+                   <Route exact path="/detallesdepartamento/:numero/:nombre/:localidad"
+                   render={props => {
+                       var numero = props.match.params.numero;
+                       var nombre = props.match.params.nombre;
+                       var localidad = props.match.params.localidad; 
+                       return <DetallesDepartamento
+                       iddepartamento = {numero}
+                       nombre = {nombre}
+                       localidad = {localidad}/>
+                   }}/>
+                   <Route exact path="/updatedepartamento/:numero"
+                   render={props => {
+                       var numero = props.match.params.numero;
+
+                       return <UpdateDepartamentos
+                       iddepartamento = {numero}/>
+                   }}/>
+                   <Route exact path="/deletedepartamento/:numero/:nombre/:localidad"
+                   render={props => {
+                       var numero = props.match.params.numero;
+                       var nombre = props.match.params.nombre;
+                       var localidad = props.match.params.localidad; 
+                       return <EliminarDepartamento
+                       iddepartamento = {numero}
+                       nombre = {nombre}
+                       localidad = {localidad}/>
+                   }}/>
                     {/* <Route exact path="/detallesempleado/:idempleado" 
                     render={props => {
                         var id = props.match.params.idempleado;

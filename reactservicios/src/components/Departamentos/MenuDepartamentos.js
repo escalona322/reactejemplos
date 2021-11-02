@@ -13,7 +13,7 @@ export default class MenuDepartamentos extends Component {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <NavLink class="nav-link" to="/departamentos">Departamentos <span class="sr-only">(current)</span></NavLink>
+                        <NavLink class="nav-link" to="/departamentos">Departamentos</NavLink>
                     </li>
                     <li class="nav-item">
                         <NavLink class="nav-link" to="/creardepartamento">Nuevo departamento</NavLink>
